@@ -5,11 +5,13 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "electron dist/main.js",
-		"build": "tsc",
-		"watch": "tsc --watch"
+		"build": "tsc && yarn copy-files",
+		"watch": "(trap 'kill 0' SIGINT; tsc --watch & nodemon -e 'html' -x 'yarn copy-files')",
+		"copy-files": "cp src/*.html dist/"
 	},
 	"dependencies": {
 		"electron": "^12.0.5",
+		"nodemon": "^2.0.7",
 		"typescript": "^4.2.4"
 	}
 }

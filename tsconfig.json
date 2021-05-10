@@ -1,0 +1,10 @@
+{
+	// "include": [
+	// "src/main.ts"
+	// ],
+	"compilerOptions": {
+		"esModuleInterop": false,
+		"outDir": "dist",
+		"strict": true,
+	}
+}
